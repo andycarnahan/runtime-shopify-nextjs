@@ -39,4 +39,5 @@ export default function ShopifyAppBridgeProvider(props, apiKey) {
 
 ShopifyAppBridgeProvider.getInitialProps = async () => {
   const apiKey = process.env.SHOPIFY_API_PUBLIC_KEY;
+  return apiKey;
 }
