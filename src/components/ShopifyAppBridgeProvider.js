@@ -11,7 +11,6 @@ import merge from "lodash/merge";
  * @returns Component
  */
 export default function ShopifyAppBridgeProvider(props) {
-  console.log(`key: ${JSON.stringify(apiKey)}`)
   const { children, Component, pageProps, appBridgeConfig } = props;
   const shopOrigin = useShopOrigin();
   const host = useHost();
