@@ -10,7 +10,7 @@ import merge from "lodash/merge";
  * @param {*} props
  * @returns Component
  */
-export default function ShopifyAppBridgeProvider(props, apiKey) {
+export default function ShopifyAppBridgeProvider(props) {
   console.log(`key: ${JSON.stringify(apiKey)}`)
   const { children, Component, pageProps, appBridgeConfig } = props;
   const shopOrigin = useShopOrigin();
@@ -28,7 +28,7 @@ export default function ShopifyAppBridgeProvider(props, apiKey) {
   const config = merge(
     {},
     {
-      apiKey: apiKey.apiKey,
+      apiKey: process.env.SHOPIFY_API_PUBLIC_KEY,
       forceRedirect: true,
       host,
     },
