@@ -24,10 +24,12 @@ export default function ShopifyAppBridgeProvider(props) {
     return <Component {...pageProps} />;
   }
 
+  const apiKey = ShopifyAppBridgeProvider.getInitialProps();
+
   const config = merge(
     {},
     {
-      apiKey: process.env.SHOPIFY_API_PUBLIC_KEY,
+      apiKey: apiKey,
       forceRedirect: true,
       host,
     },
