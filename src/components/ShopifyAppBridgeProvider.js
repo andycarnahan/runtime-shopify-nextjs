@@ -39,7 +39,7 @@ export default function ShopifyAppBridgeProvider(props) {
   return <Provider config={config}>{children}</Provider>;
 }
 
-ShopifyAppBridgeProvider.getInitialProps = async (process) => {
+ShopifyAppBridgeProvider.getInitialProps = async () => {
   const apiKey = '34bca23626cd08ecb0533c2a93952058';
   console.log("direct from process: " + process.env.SHOPIFY_API_PUBLIC_KEY);
   return { apiKey: apiKey };
