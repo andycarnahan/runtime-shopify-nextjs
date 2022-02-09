@@ -27,7 +27,7 @@ export default function ShopifyAppBridgeProvider(props) {
   const config = merge(
     {},
     {
-      apiKey: process.env.NEXT_PUBLIC_SHOPIFY_API_PUBLIC_KEY,
+      apiKey: apiKey,
       forceRedirect: true,
       host,
     },
@@ -35,4 +35,8 @@ export default function ShopifyAppBridgeProvider(props) {
   );
 
   return <Provider config={config}>{children}</Provider>;
+}
+
+ShopifyAppBridgeProvider.getInitialProps = async () => {
+  const apiKey = process.env.SHOPIFY_API_PUBLIC_KEY;
 }
