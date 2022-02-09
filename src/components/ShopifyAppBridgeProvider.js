@@ -10,7 +10,7 @@ import merge from "lodash/merge";
  * @param {*} props
  * @returns Component
  */
-export default function ShopifyAppBridgeProvider(props) {
+export default function ShopifyAppBridgeProvider(props, apiKey) {
   const { children, Component, pageProps, appBridgeConfig } = props;
   const shopOrigin = useShopOrigin();
   const host = useHost();
